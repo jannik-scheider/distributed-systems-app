@@ -18,4 +18,10 @@
  Das Frontend und Backend laufen aktuell im gleichen Container. In einem nächsten Schritt könnten Frontend und Backend getrennt werden, und für jeden Part ein seperates Image erstellt werden. Damit sie als getrennte Container laufen können.
  Außerdem müsste das Mapping der REST API nochmals überarbeitet werden. Es wurden noch nicht alle Methoden richtig angewendet. Als Beispiel hierfür müsste der API Endpunkt /delete/{id} mit der Methode GET in /todo/{id} umbenannt werden 
  und spezifiziert werden dass es sich dabei um die Methode DELETE handelt.
- 
+
+ # Anwendung der 12-Factor Apps Prinzipien
+* Codebase: Git
+* Dependencies: maven
+* Config: docker-compose file
+* Backing services: postgresql Datenbank läuft seperat als Container, wird von Laufzeitumgebung bereitgestellt und Konfigurationen sind in docker-compose Datei angegeben
+* Port Binding: definiert in docker-compose file
